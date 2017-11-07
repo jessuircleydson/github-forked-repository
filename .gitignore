@@ -1,0 +1,4 @@
+*.swp?
+dist/
+*-lock.json
+node_modules/
