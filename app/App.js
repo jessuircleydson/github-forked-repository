@@ -1,8 +1,8 @@
 import React from 'react';
 import ReacDOM from 'react-dom';
-import Members from './components/Members';
+import Fork from './components/Fork';
 
 ReacDOM.render(
-  <Members/>,
+  <Fork/>,
   document.getElementById('app')
 );

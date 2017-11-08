@@ -38,7 +38,12 @@ class Fork extends React.Component {
   	   {
 	     forkers.map(item => {
 	    	return(
-		 <li key={item}> <a href={item.owner.html_url} target="_blank"><img src={item.owner.avatar_url} width="50px"/> {item.owner.login}</a></li>
+		  <li key={item}>
+                    <a href={item.owner.html_url} target="_blank">
+                      <img src={item.owner.avatar_url} width="50px"/>
+                      {item.owner.login}
+                    </a>
+                  </li>
 		) 
  	     })
 	   }
