@@ -1,8 +1,8 @@
 import React from 'react';
 import ReacDOM from 'react-dom';
-import Fork from './components/Fork';
+import Layout from './components/Layout';
 
 ReacDOM.render(
-  <Fork/>,
+  <Layout/>,
   document.getElementById('app')
 );

@@ -3,18 +3,18 @@ import Form from './Form';
 import List from './List';
 import Github from './Github';
 
-class Fork extends React.Component {
+class Issue extends React.Component {
   constructor(props) {
     super(props);
     this.state = { items: [],  userInfo:{}};
-    this.searchForked = this.searchForked.bind(this);
+    this.searchIssue = this.searchIssue.bind(this);
     this.showInfoUser = this.showInfoUser.bind(this);
   }
 
-  searchForked(info) {
-    Github.getForks(info)
+  searchIssue(info) {
+    Github.getIssues(info)
       .then(result=> {
-       result.json().then(response=>{
+        result.json().then(response=>{
           if(response.message){
             let message = response.message + ": Check if you're looking for the right names."
             alert(message)
@@ -31,16 +31,17 @@ class Fork extends React.Component {
   }
   
   render() {
-    let forkers = this.state.items;
+    let issues = this.state.items;
     return(
 	<div>
-	  <h3>Search for forked repositories in {this.state.userInfo.name}/{this.state.userInfo.repo}</h3>
+	  <h3>Search for issues in {this.state.userInfo.name}/{this.state.userInfo.repo}</h3>
 
-          <Form getSearchValues={this.searchForked} showInfoUser={this.showInfoUser}/>
-          <List list={forkers} type="fork"/>
+          <Form getSearchValues={this.searchIssue} showInfoUser={this.showInfoUser}/>
+          <List list={issues} type="issue"/>
         </div>
     ) 
   }
 }
 
-export default Fork;
+export default Issue;
+
