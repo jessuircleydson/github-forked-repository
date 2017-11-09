@@ -1,28 +1,25 @@
 import React from 'react';
 import Form from './Form';
+import Github from './Github';
 
 class Fork extends React.Component {
   constructor(props) {
     super(props);
     this.state = { items: [],  userInfo:{}};
-    this.searchFor = this.searchFor.bind(this);
+    this.searchForked = this.searchForked.bind(this);
     this.showInfoUser = this.showInfoUser.bind(this);
   }
 
-  searchFor(info) {
-  
-   fetch(`https://api.github.com/repos/${info.username}/${info.reponame}/forks`, {
-     headers: {
-	'Accept': 'application/vnd.github.v3+json'
-     }
-    }).then(result=> {
-        result.json().then(response=>{
-           this.setState({items:response});
+  searchForked(info) {
+    Github.getForks(info)
+      .then(result=> {
+        result.json().then(response=>{ 
+          this.setState({items:response});
 	})
-    });
-
+      });
   }
 
+  
   showInfoUser(info) {
     this.setState({userInfo:{name:info.username, repo:info.reponame}});
   }
@@ -33,7 +30,7 @@ class Fork extends React.Component {
 	<div>
 	  <h3>Search for forked repositories in {this.state.userInfo.name} : {this.state.userInfo.repo}</h3>
 
-          <Form getSearchValues={this.searchFor} showInfoUser={this.showInfoUser}/>
+          <Form getSearchValues={this.searchForked} showInfoUser={this.showInfoUser}/>
 	  <ul>
   	   {
 	     forkers.map(item => {
