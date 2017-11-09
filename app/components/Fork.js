@@ -19,7 +19,6 @@ class Fork extends React.Component {
             let message = response.message + ": Check if you're looking for the right names."
             alert(message)
           } else {
-            
               this.setState({items:response});
           }
 	});
@@ -33,12 +32,12 @@ class Fork extends React.Component {
   render() {
     let forkers = this.state.items;
     return(
-	<div>
-	  <h3>Search for forked repositories in {this.state.userInfo.name}/{this.state.userInfo.repo}</h3>
+      <div>
+	<h3>Search for forked repositories in {this.state.userInfo.name}/{this.state.userInfo.repo}</h3>
 
-          <Form getSearchValues={this.searchForked} showInfoUser={this.showInfoUser}/>
-          <List list={forkers} type="fork"/>
-        </div>
+        <Form getSearchValues={this.searchForked} showInfoUser={this.showInfoUser}/>
+        <List list={forkers} type="fork"/>
+      </div>
     ) 
   }
 }

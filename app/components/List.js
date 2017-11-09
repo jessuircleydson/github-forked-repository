@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const List = ({list, type}) => {
 
   const typeList = {

@@ -16,10 +16,9 @@ class Issue extends React.Component {
       .then(result=> {
         result.json().then(response=>{
           if(response.message){
-            let message = response.message + ": Check if you're looking for the right names."
+            let message = response.message + ": Check if you're looking for the right names.";
             alert(message)
-          } else {
-            
+          } else {        
               this.setState({items:response});
           }
 	});
@@ -33,12 +32,12 @@ class Issue extends React.Component {
   render() {
     let issues = this.state.items;
     return(
-	<div>
-	  <h3>Search for issues in {this.state.userInfo.name}/{this.state.userInfo.repo}</h3>
+      <div>
+	<h3>Search for issues in {this.state.userInfo.name}/{this.state.userInfo.repo}</h3>
 
-          <Form getSearchValues={this.searchIssue} showInfoUser={this.showInfoUser}/>
-          <List list={issues} type="issue"/>
-        </div>
+        <Form getSearchValues={this.searchIssue} showInfoUser={this.showInfoUser}/>
+        <List list={issues} type="issue"/>
+      </div>
     ) 
   }
 }
