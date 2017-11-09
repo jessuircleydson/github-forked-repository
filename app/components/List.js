@@ -20,7 +20,6 @@ const List = ({list, type}) => {
   }
 
   const issueList = (item) => {
-    console.log(item)
     return (
       <li key={item.id}>
           Title:{item.title}<br />
@@ -30,15 +29,12 @@ const List = ({list, type}) => {
          <a href={item.html_url} target="_blank">Abrir issue</a>
       </li>        
     )
-      console.log(item)
   }
 
   const verifyList = (item) => {
     if(typeList[type] === "fork") {
-      console.log("i'm fork")
       return forkList(item)
     } else if(typeList[type] === "issue") {
-        console.log("i'm issue")
         return issueList(item)
     }
   }
