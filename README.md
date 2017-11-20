@@ -2,4 +2,7 @@
 
 Using Github Api in React
 
- - Forkers by repository
+## You can list:
+
+ - Forkers
+ - Issues 
