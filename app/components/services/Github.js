@@ -8,8 +8,16 @@ class Github {
     });
   }
 
-  static getIssues(info) {
+   static getIssues(info) {
     return fetch(`https://api.github.com/repos/${info.username}/${info.reponame}/issues`, {
+      headers: {
+	'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+  }
+  
+  static getUserRepos(info) {
+    return fetch(`https://api.github.com/users/${info.username}/repos`, {
       headers: {
 	'Accept': 'application/vnd.github.v3+json'
       }

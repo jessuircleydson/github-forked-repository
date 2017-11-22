@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from './Form';
 import List from './List';
-import Github from './Github';
+import Github from './services/Github';
 
 class Issue extends React.Component {
   constructor(props) {
