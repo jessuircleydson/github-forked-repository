@@ -2,7 +2,7 @@ import React from 'react';
 
 const List = ({list, type}) => {
 
-  const forkedList = (item) =>  (
+  const setForkedList = (item) =>  (
     <li key={item}>
       <a href={item.owner.html_url} target="_blank">
         <img src={item.owner.avatar_url} width="50px"/>
@@ -11,7 +11,7 @@ const List = ({list, type}) => {
     </li>
   )
   
-  const issueList = (item) => (
+  const setIssueList = (item) => (
     <li key={item.id}>
       Title:{item.title}<br />
       Created by: 
@@ -22,8 +22,8 @@ const List = ({list, type}) => {
   )
 
   const listTypes = {
-      fork: forkedList,
-      issue: issueList
+      fork: setForkedList,
+      issue: setIssueList
   }
 
   const getListType = (item) => {
