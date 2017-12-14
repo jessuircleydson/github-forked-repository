@@ -1,12 +1,12 @@
 import React from 'react';
-import Fork from './Fork';
-import Issue from './Issue';
+import Github from './services/Github';
+import ResultsList from './Results';
 
 const Layout = () => {
   return(
     <div>
-      <Fork/>
-      <Issue/>
+      <ResultsList githubApiMethod={Github.getForks} listType="fork"  />
+      <ResultsList githubApiMethod={Github.getIssues} listType="issue"  />
     </div>
   )
 }
