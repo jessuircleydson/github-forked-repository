@@ -5,4 +5,5 @@ Using Github Api in React
 ## You can list:
 
  - Forkers
- - Issues 
+ - Issues
+ - Repository by user
