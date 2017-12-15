@@ -21,9 +21,16 @@ const List = ({list, type}) => {
     </li>        
   )
 
+  const setUserReposList = (item) => (
+    <li key={item.id}>
+      Repository: <a href={item.html_url} target="_blank">{item.name}</a>
+    </li>
+  )
+
   const listTypes = {
       fork: setForkedList,
-      issue: setIssueList
+      issue: setIssueList,
+      userRepos: setUserReposList
   }
 
   const getListType = (item) => {

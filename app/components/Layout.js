@@ -7,6 +7,7 @@ const Layout = () => {
     <div>
       <ResultsList githubApiMethod={Github.getForks} listType="fork"  />
       <ResultsList githubApiMethod={Github.getIssues} listType="issue"  />
+      <ResultsList githubApiMethod={Github.getUserRepos} listType="userRepos"  />
     </div>
   )
 }
